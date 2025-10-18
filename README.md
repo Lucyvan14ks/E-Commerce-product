@@ -8,7 +8,9 @@ Este projeto é uma implementação front-end de uma página de produto para uma
  ✨ Funcionalidades
 
   O projeto oferece as seguintes interações e recursos:
-  🖼️ Galeria de Produtos e LightboxTroca de Imagem: Alterne a imagem principal do produto clicando nas miniaturas (thumbnails).Feedback Visual: A miniatura ativa é destacada com uma borda laranja e opacidade reduzida (sincronizada via classe .active).Lightbox (Galeria em Tela Cheia): A imagem principal é clicável, abrindo uma galeria em modal de tela cheia.
+  🖼️ Galeria de Produtos e LightboxTroca de Imagem: Alterne a imagem principal do produto clicando nas miniaturas (thumbnails).
+  Feedback Visual: A miniatura ativa é destacada com uma borda laranja e opacidade reduzida (sincronizada via classe .active).
+  Lightbox (Galeria em Tela Cheia): A imagem principal é clicável, abrindo uma galeria em modal de tela cheia.
   Navegação Circular: Dentro do Lightbox, é possível navegar entre as quatro imagens do produto usando botões de navegação lateral (próximo e anterior).
   Sincronização de Estado: O estado de visualização do Lightbox (qual imagem está sendo exibida) é sincronizado com o estado da galeria principal.
 
@@ -34,5 +36,6 @@ Este projeto é uma implementação front-end de uma página de produto para uma
   Tecnologia e Finalidade 
 
   HTML5: Estrutura semântica e esqueleto do projeto, incluindo os elementos de modal (lightbox-modal e cart-modal).
-  CSS3: Estilização completa, uso de variáveis CSS (custom properties) para cores e o layout principal de desktop de duas colunas.Vanilla JavaScript: Lógica de interação do projeto: controle de estado da galeria, funcionalidade de toggle dos modais, cálculo do carrinho e: validação de quantidade.
+  CSS3: Estilização completa, uso de variáveis CSS (custom properties) para cores e o layout principal de desktop de duas colunas.
+  JavaScript: Lógica de interação do projeto: controle de estado da galeria, funcionalidade de toggle dos modais, cálculo do carrinho e: validação de quantidade.
   Google Fonts Uso da fonte Kumbh Sans para replicar a tipografia do design.
