@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce product page</title>
+
+    <link rel="stylesheet" href="./src/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cart-modal hidden">
+        <h4>Cart</h4>
+        <div class="cart-content">
+            <p>Your cart is empty.</p>
+        </div>
+    </div>
+    
+    <header class="header">
+        <div class="header-content">
+            <img src="./src/images/logo.svg" alt="Sneakers logo">
+            <nav class="menu">
+                <ul>
+                    <li> <a href="#">Collections</a> </li>
+                    <li> <a href="#">Men</a> </li>
+                    <li> <a href="#">Women</a> </li>
+                    <li> <a href="#">About</a> </li>
+                    <li> <a href="#">Contact</a> </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="icons">
+            <button class="cart-button" aria-label="Abrir carrinho">
+                <img src="./src/images/icon-cart.svg" alt="ícone de carrinho">
+                <span class="cart-count hidden">0</span>
+            </button>
+            <img src="./src/images/image-avatar.png" alt="imagem de avatar do usuário" class="avatar">
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="product-wrapper">
+            
+            <section class="product-gallery">
+                <div class="main-image">
+                    <img src="./src/images/image-product-1.jpg" alt="Sneaker principal" class="image-clickable" id="current-product-image">
+                </div>
+                
+                <div class="thumbnails">
+                    <button class="thumb-button active" aria-label="Ver imagem 1">
+                        <img src="./src/images/image-product-1-thumbnail.jpg" alt="Miniatura 1" data-index="1">
+                    </button>
+                    <button class="thumb-button" aria-label="Ver imagem 2">
+                        <img src="./src/images/image-product-2-thumbnail.jpg" alt="Miniatura 2" data-index="2">
+                    </button>
+                    <button class="thumb-button" aria-label="Ver imagem 3">
+                        <img src="./src/images/image-product-3-thumbnail.jpg" alt="Miniatura 3" data-index="3">
+                    </button>
+                    <button class="thumb-button" aria-label="Ver imagem 4">
+                        <img src="./src/images/image-product-4-thumbnail.jpg" alt="Miniatura 4" data-index="4">
+                    </button>
+                </div>
+            </section>
+            
+            <section class="product-details">
+                <p class="company-name">SNEAKER COMPANY</p>
+                <h1 class="product-title">Fall Limited Edition Sneakers</h1>
+                <p class="product-description">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+
+                <div class="price-info">
+                    <div class="current-price">
+                        <span class="price">$125.00</span>
+                        <span class="discount-badge">50%</span>
+                    </div>
+                    <p class="original-price">$250.00</p>
+                </div>
+
+                <div class="add-to-cart-controls">
+                    <div class="quantity-selector">
+                        <button id="decrease">
+                            <img src="./src/images/icon-minus.svg" alt="Diminuir-quantidade">
+                        </button>
+                        <input type="number" id="quantity" value="1" min="1" readonly>
+                        <button id="increase">
+                            <img src="./src/images/icon-plus.svg" alt="Aumentar-quantidade">
+                        </button>
+                    </div>
+                    <button id="addToCart" class="add-to-cart-btn">
+                        <img src="./src/images/icon-cart.svg" alt="ícone de carrinho">
+                        Add to cart
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <div class="lightbox-modal hidden">
+        <div class="lightbox-content">
+            <button class="close-lightbox" aria-label="Fechar lightbox">
+                <img src="./src/images/icon-close.svg" alt="ícone de fechar">
+            </button>
+            <div class="lightbox-main-image">
+                <img src="./src/images/image-product-1.jpg" alt="Sneaker principal em lightbox">
+                <button class="prev-btn" aria-label="Imagem anterior">
+                    <img src="./src/images/icon-previous.svg" alt="">
+                </button>
+                <button class="next-btn" aria-label="Próxima imagem">
+                    <img src="./src/images/icon-next.svg" alt="">
+                </button>
+            </div>
+            <div class="lightbox-thumbnails">
+                </div>
+        </div>
+    </div>
+    
+    <script src="./src/js/script.js"></script>
+</body>
+</html>

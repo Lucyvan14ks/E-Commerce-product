@@ -1,0 +1,484 @@
+:root {
+/* Primary */
+    --Orange: hsl(26, 100%, 55%);
+    --Pale-orange: hsl(25, 100%, 94%);
+
+/* Neutral */
+    --Very-dark-blue: hsl(220, 13%, 13%);
+    --Dark-grayish-blue: hsl(219, 9%, 45%);
+    --Grayish-blue: hsl(220, 14%, 75%);
+    --Light-grayish-blue: hsl(223, 64%, 98%);
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 0%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+body {
+    background-color: var(--Light-grayish-blue);
+    color: var(--Very-dark-blue);
+    font-size: 15px;
+    line-height: 25px;
+}
+.header {
+    background-color: var(--White);
+    height: 100px;
+    padding: 0 5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    font-weight: 700;
+}
+.menu a {
+    text-decoration: none;
+    color: var(--Dark-grayish-blue);
+}
+.menu a:hover {
+    color: var(--Very-dark-blue);
+}
+.icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+}
+.icons img:last-child {
+    width: 50px;
+    border: 2px solid var(--Orange);
+    border-radius: 50%;
+    padding: 2px;
+}
+.icons img:hover {
+    opacity: 0.7;
+}
+/* ... Seu CSS inicial ... */
+
+/* Ajuste do header para o layout de desktop */
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Espaçamento entre logo e menu */
+}
+
+.icons img.avatar {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.icons .cart-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+}
+
+.icons .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: var(--Orange);
+    color: var(--White);
+    font-size: 10px;
+    padding: 1px 7px;
+    border-radius: 9px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* * MAIN CONTENT LAYOUT (Ideal para 1200px)
+ * A tela deve ter largura fixa e centralizada, com o produto em duas colunas.
+ */
+.container {
+    max-width: 1100px; /* Largura para o conteúdo principal */
+    margin: 80px auto; /* Margem superior/inferior e centralização horizontal */
+    padding: 0 40px; /* Padding para telas maiores que 1100px */
+}
+
+.product-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: 120px; /* Espaço entre as colunas (imagem e detalhes) */
+    align-items: center;
+}
+
+/* * 1. GALERIA DE PRODUTOS (Esquerda)
+ */
+.product-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 445px; /* Tamanho padrão da imagem principal no design */
+}
+
+.main-image img {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: space-between;
+}
+
+.thumb-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: calc(25% - 10px); /* Para 4 miniaturas com espaço */
+    border-radius: 10px;
+    overflow: hidden; /* Garante que a borda só apareça no contêiner */
+    transition: opacity 0.2s, border 0.2s;
+}
+
+.thumb-button img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+/* * 2. DETALHES DO PRODUTO (Direita)
+ */
+.product-details {
+    max-width: 450px; /* Restrição para que o texto não se espalhe muito */
+    padding-top: 50px; /* Alinha verticalmente com a imagem */
+}
+
+.company-name {
+    color: var(--Orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+}
+
+.product-title {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--Very-dark-blue);
+    margin-bottom: 30px;
+}
+
+.product-description {
+    color: var(--Dark-grayish-blue);
+    margin-bottom: 30px;
+}
+
+/* Preço */
+.price-info {
+    margin-bottom: 30px;
+}
+
+.current-price {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--Very-dark-blue);
+}
+
+.discount-badge {
+    background-color: var(--Pale-orange);
+    color: var(--Orange);
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.original-price {
+    color: var(--Grayish-blue);
+    text-decoration: line-through;
+    font-weight: 700;
+}
+
+/* Controles de Adicionar ao Carrinho */
+.add-to-cart-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.quantity-selector {
+    display: flex;
+    background-color: var(--Light-grayish-blue);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 55px;
+    flex-basis: 35%; /* Ocupa cerca de 35% do espaço */
+}
+
+.quantity-selector button {
+    background: none;
+    border: none;
+    color: var(--Orange);
+    font-size: 24px;
+    font-weight: 700;
+    width: 50px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+#quantity {
+    background: none;
+    border: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--Very-dark-blue);
+    width: 100%;
+}
+
+.add-to-cart-btn {
+    flex-basis: 65%; /* Ocupa 65% do espaço restante */
+    background-color: var(--Orange);
+    color: var(--White);
+    border: none;
+    border-radius: 10px;
+    height: 55px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 20px 30px -10px var(--Pale-orange); /* Sombra conforme o design */
+    transition: opacity 0.2s, box-shadow 0.2s;
+}
+
+/* * 3. CARRINHO MODAL (Esqueleto)
+ */
+.cart-modal {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    width: 360px;
+    background-color: var(--White);
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+    padding: 20px;
+}
+
+.cart-modal h4 {
+    border-bottom: 1px solid var(--Light-grayish-blue);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: var(--Very-dark-blue);
+}
+
+.cart-content {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--Dark-grayish-blue);
+}
+
+/* * 4. LIGHTBOX MODAL (Esqueleto)
+ */
+.lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content {
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: var(--White);
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.2s;
+    font-weight: 700;
+}
+
+.lightbox-main-image {
+    position: relative;
+}
+
+.lightbox-main-image img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.prev-btn img, .next-btn img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--Very-dark-blue);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.prev-btn img {
+    left: -50px;
+}
+
+.next-btn img {
+    right: -50px;
+}
+
+.lightbox-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.lightbox-thumbnails .thumb-button {
+    width: 88px; /* Tamanho fixo para as miniaturas do lightbox */
+}
+
+/* Classe para ocultar elementos com JavaScript */
+.hidden {
+    display: none !important;
+}
+
+/* * ESTADOS INTERATIVOS (Hover e Focus)
+ * Garante feedback visual para todos os elementos clicáveis.
+ */
+
+/* Menu de Navegação */
+.menu a {
+    position: relative;
+    padding-bottom: 40px; /* Espaço para o underline */
+    transition: color 0.2s;
+}
+
+.menu a:hover,
+.menu a:focus {
+    color: var(--Very-dark-blue);
+    outline: none; /* Remove a borda de foco padrão para usar nosso próprio estilo */
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--Orange);
+    transform: scaleX(0); /* Inicialmente oculto */
+    transition: transform 0.3s ease-out;
+}
+
+.menu a:hover::after,
+.menu a:focus::after {
+    transform: scaleX(1); /* Exibe o underline */
+}
+
+/* Ícones do Cabeçalho */
+.icons .cart-button:hover img,
+.icons .cart-button:focus img {
+    opacity: 0.7;
+}
+
+.icons .avatar:hover,
+.icons .avatar:focus {
+    border-color: var(--Orange);
+    outline: none; /* Mantém o estilo de borda do design */
+    opacity: 0.8;
+}
+
+/* Miniaturas do Produto */
+.thumb-button:hover img {
+    opacity: 0.5;
+}
+
+.thumb-button.active img {
+    opacity: 0.3; /* Imagem principal com transparência */
+}
+
+.thumb-button.active {
+    border: 3px solid var(--Orange);
+    background-color: var(--White); /* Para garantir que o fundo fique claro */
+}
+
+.thumb-button:focus {
+    outline: 2px dashed var(--Orange); /* Foco acessível */
+    outline-offset: 2px;
+}
+
+/* Botões de Quantidade */
+.quantity-selector button:hover,
+.quantity-selector button:focus {
+    opacity: 0.6;
+    outline: none;
+}
+
+/* Botão Adicionar ao Carrinho */
+.add-to-cart-btn:hover {
+    opacity: 0.7; /* Escurece levemente no hover */
+}
+
+.add-to-cart-btn:focus {
+    outline: 2px solid var(--Very-dark-blue);
+    outline-offset: 3px;
+    opacity: 0.9;
+}
+
+/* Lightbox Botões */
+.close-lightbox:hover,
+.close-lightbox:focus {
+    color: var(--Orange);
+    outline: none;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    color: var(--Orange);
+}
+
+.prev-btn:focus, .next-btn:focus {
+    outline: 2px dashed var(--Orange);
+    outline-offset: 2px;
+}
+
